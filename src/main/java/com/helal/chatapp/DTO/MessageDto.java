@@ -10,7 +10,7 @@ public record MessageDto (
         String message,
         UUID chatId
 ){
-    public MessageDto toDto(Message message){
+    public static MessageDto toDto(Message message){
         return new MessageDto(
                 message.getId(),
                 message.getMessage(),
@@ -18,7 +18,7 @@ public record MessageDto (
         );
     }
 
-    public Message fromDto(MessageDto messageDto){
+    public static Message fromDto(MessageDto messageDto){
         return Message.builder()
                 .id(messageDto.id())
                 .message(messageDto.message())

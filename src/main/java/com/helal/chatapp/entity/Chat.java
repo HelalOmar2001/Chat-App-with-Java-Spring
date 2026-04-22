@@ -23,4 +23,7 @@ public class Chat {
     @Column(nullable = false)
     private Boolean isGroupChat;
 
+    @Column(nullable = true)
+    private String chatName;
+
 }

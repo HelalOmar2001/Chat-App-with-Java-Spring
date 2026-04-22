@@ -8,19 +8,22 @@ import java.util.UUID;
 
 public record ChatDto(
         UUID id,
-        Boolean isGroupChat
+        Boolean isGroupChat,
+        String chatName
 ) {
-    public ChatDto toDto(Chat chat) {
+    public static ChatDto toDto(Chat chat) {
         return new ChatDto(
                 chat.getId(),
-                chat.getIsGroupChat()
+                chat.getIsGroupChat(),
+                chat.getChatName()
         );
     }
 
-    public Chat toChat(ChatDto chatDto) {
+    public static Chat fromDto(ChatDto chatDto) {
         return Chat.builder()
                 .id(chatDto.id)
                 .isGroupChat(chatDto.isGroupChat)
+                .chatName(chatDto.chatName)
                 .build();
     }
 }

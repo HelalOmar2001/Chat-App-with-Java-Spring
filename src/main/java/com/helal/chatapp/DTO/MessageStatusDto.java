@@ -13,7 +13,7 @@ public record MessageStatusDto(
         Long chatParticipantId,
         MessageStatusEnum status
 ) {
-    public MessageStatusDto toDto(MessageStatus messageStatus) {
+    public static MessageStatusDto toDto(MessageStatus messageStatus) {
         return new MessageStatusDto(
                 messageStatus.getId(),
                 messageStatus.getMessage().getId(),
@@ -22,7 +22,7 @@ public record MessageStatusDto(
         );
     }
 
-    public MessageStatus fromDto(MessageStatusDto messageStatusDto) {
+    public static MessageStatus fromDto(MessageStatusDto messageStatusDto) {
         return MessageStatus.builder()
                 .id(messageStatusDto.id())
                 .message(

@@ -13,7 +13,7 @@ public record ChatParticipantDto(
         UUID chatId,
         RoleEnum role
 ) {
-    public ChatParticipantDto toDto(ChatParticipant chatParticipant) {
+    public static ChatParticipantDto toDto(ChatParticipant chatParticipant) {
         return new ChatParticipantDto(
                 chatParticipant.getId(),
                 chatParticipant.getUser().getId(),
@@ -22,7 +22,7 @@ public record ChatParticipantDto(
         );
     }
 
-    public ChatParticipant toChatParticipant(ChatParticipantDto chatParticipantDto) {
+    public static ChatParticipant fromDto(ChatParticipantDto chatParticipantDto) {
         return ChatParticipant.builder()
                 .id(chatParticipantDto.id())
                 .user(

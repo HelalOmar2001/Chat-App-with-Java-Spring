@@ -16,7 +16,7 @@ public class ChatController {
 
     private final ChatService chatService;
 
-    @GetMapping
+    @PostMapping
     public ResponseEntity<UUID> createChat(
             @RequestBody ChatDto chatDto
             ){
@@ -50,7 +50,7 @@ public class ChatController {
         return ResponseEntity.accepted().build();
     }
 
-    @GetMapping
+    @PutMapping
     public ResponseEntity<UUID> updateChat(
             @RequestBody ChatDto chatDto
     ){

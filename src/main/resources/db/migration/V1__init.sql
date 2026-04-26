@@ -1,0 +1,3 @@
+-- V1__create_sequences.sql
+CREATE SEQUENCE IF NOT EXISTS chat_participants_seq START WITH 1 INCREMENT BY 50;
+CREATE SEQUENCE IF NOT EXISTS message_status_seq   START WITH 1 INCREMENT BY 50;

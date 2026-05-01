@@ -28,21 +28,21 @@ public class ChatController {
         return ResponseEntity.ok(chatService.getChats());
     }
 
-    @GetMapping(path = "/chat-id")
+    @GetMapping(path = "/{chat-id}")
     public ResponseEntity<ChatDto> findChat(
             @PathVariable("chat-id") UUID id
     ){
         return ResponseEntity.ok(chatService.getChat(id));
     }
 
-    @GetMapping(path = "/user-id")
+    @GetMapping(path = "/user/{user-id}")
     public ResponseEntity<List<ChatDto>> findChatsById(
             @PathVariable("user-id") Long id
     ){
         return ResponseEntity.ok(chatService.getChatsByUser(id));
     }
 
-    @DeleteMapping(path = "/chat-id")
+    @DeleteMapping(path = "/{chat-id}")
     public ResponseEntity<ChatDto> deleteChat(
             @PathVariable("chat-id") UUID id
     ){

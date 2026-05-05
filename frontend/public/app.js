@@ -3,8 +3,8 @@
    Connects to Spring Boot REST API + STOMP WebSocket
    ═══════════════════════════════════════════════════════ */
 
-const API = 'http://localhost:8080';
-const WS_ENDPOINT = `${API}/ws`;
+const API = ''; // Point to current host (NestJS), which will proxy to Spring Boot
+const WS_ENDPOINT = window.location.origin + '/ws';
 
 // ─── State ───
 let currentUser = null;   // { id, name }
